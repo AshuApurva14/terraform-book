@@ -27,6 +27,17 @@ resource "random_pet" "instance" {
   length = 2
 }
 
+resource "aws_instance" "webserver" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+
+  tags = {
+    env = "dev"
+    app = "webserver"
+  }
+
+}
+
 module "ec2-instance" {
   source = "./modules/aws-ec2-instance"
 
@@ -43,3 +54,8 @@ module "hello" {
 
   secret_key = "secret"
 }
+
+#===================================================================================#
+
+# Date - 28-06-2026 (Sunday)
+# =====================================

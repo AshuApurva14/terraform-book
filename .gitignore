@@ -38,6 +38,8 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-development/scripts/awscliv2.zip
 
-aws
+
+scripts/aws
+scripts/awscliv2.zip
+
